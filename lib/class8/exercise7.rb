@@ -22,6 +22,12 @@
 
 class Array
   def each_without_yolo(&block)
-    block # fix me
+    each do |element|
+      if element.upcase == 'YOLO'
+        block.call('Life is too short')
+      else
+        block.call(element)
+      end
+    end
   end
 end
